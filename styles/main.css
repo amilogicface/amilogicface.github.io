@@ -174,12 +174,24 @@ header, main, footer {
     align-items: stretch;
 }
 
-.main-header__my-photo {
-    width: 36%;
-    max-height: 235px;
+.main-header__img-placer {
+    position: relative;
 
-    object-fit: cover;
-    object-position: center;
+    width: 36%;
+    min-height: 235px;
+
+    overflow: hidden;
+}
+
+.main-header__my-photo {
+    position: absolute;
+
+    width: 100%;
+    height: auto;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .main-header__competence-block {
