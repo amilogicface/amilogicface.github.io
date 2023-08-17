@@ -1,0 +1,236 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+
+	font-size: 10px;
+
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, p {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+p {
+	font-size: 1.6rem;
+}
+
+/* Component styles */
+
+.icon {
+	font-size: 2rem;
+	transition: transform 0.3s;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+
+	min-width: 320px;
+}
+
+/* Accordion styles */
+
+.accordion {
+	width: 100%;
+	max-width: 820px;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: #f2f2f2;
+
+	border-radius: 20px;
+}
+
+.accordion__main-content {
+	position: relative;
+
+	width: 100%;
+
+	color: #393e46;
+}
+
+.accordion__headline {
+	padding: 40px 30px;
+
+	background-color: #222831;
+	color: #f2f2f2;
+
+	text-transform: uppercase;
+}
+
+.accordion__block-content {
+	width: 100%;
+
+	border-top: 1px solid black;
+}
+
+.accordion__label {
+	width: 100%;
+
+	display: inline-block;
+
+	cursor: pointer;
+}
+
+.accordion__radio {
+	display: none;
+}
+
+.accordion__description-aligner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 10px 20px;
+}
+
+
+.accordion__hidden-content {
+	position: relative;
+	overflow: hidden;
+
+	text-align: center;
+
+	height: 0px;
+
+	transition: height 0.3s;
+}
+
+.accordion__img {
+	display: inline-block;
+
+	width: 0px;
+	height: 0px;
+
+	padding: 30px;
+
+	opacity: 0;
+
+	transition: all 0.6s;
+
+}
+
+/* Interactive styles for user hover, clicks and checked */
+
+.accordion__label:active > .accordion__hidden-content {
+	opacity: 0.5;
+}
+
+.accordion__label:active .accordion__description-aligner p {
+	color: #393e46;
+}
+
+@media (hover:hover) {
+
+	.accordion__main-content {
+		cursor: pointer;
+	}
+
+	.accordion__main-content:hover {
+		color: #f96d00;
+	}
+
+	.accordion__main-content:hover .icon {
+		opacity: 1;
+	}
+
+	.accordion__label:hover > .accordion__hidden-content {
+		height: 200px;
+
+		border-top: 1px solid black;
+	}
+
+	.accordion__radio:hover + .accordion__description-aligner .icon {
+		transform: rotate(135deg);
+	}
+
+	.accordion__label:hover .accordion__img {
+		width: 200px;
+		height: 200px;
+
+		opacity: 1;
+	}
+}
+
+.accordion__label:active .icon {
+	color: #393e46;
+}
+
+.accordion__radio:checked ~ .accordion__hidden-content {
+	min-height: 200px;
+
+	border-top: 1px solid black;
+}
+
+.accordion__radio:checked ~ .accordion__description-aligner {
+	color: #f96d00;
+}
+
+.accordion__radio:checked + .accordion__description-aligner .icon {
+	transform: rotate(45deg);
+}
+
+
+.accordion__radio:checked ~ .accordion__hidden-content .accordion__img {
+	height: 200px;
+	width: 200px;
+
+	opacity: 1;
+}
+
+.accordion__radio:checked .accordion__description-aligner p {
+	color: #f96d00;
+}
+
+
+/* Media styles for all types of screens and resolutions */
+
+
+@media screen and (min-width: 1920px) {
+	html, body {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 1920px) {
+	html, body {
+		font-size: 9px;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	html, body {
+		font-size: 7px;
+	}
+
+	.accordion__headline {
+		text-align: center;
+	}
+}
+
+
+/* Hover effects styles for special media devices with hover friendly */
+
+@media (hover: none) {
+	.icon {
+		opacity: 1;
+	}
+
+	.accordion__main-content {
+		cursor: default;
+	}
+}
