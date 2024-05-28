@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+
+$main-font: "JetBrains Mono";
+$second-font: "JetBrains Mono";
+
+%main-font {
+  font-family: $main-font, Helvetica, Verdana, Arial, sans-serif;
+}
+
+%second-font {
+  font-family: $second-font, Helvetica, Verdana, Arial, sans-serif;
+
+}

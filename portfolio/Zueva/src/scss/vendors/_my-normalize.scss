@@ -1,0 +1,38 @@
+header, nav, section, article, aside, footer, main {
+  display: block
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}

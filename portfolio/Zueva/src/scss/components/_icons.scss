@@ -1,0 +1,27 @@
+.icon {
+  display: block;
+  width: 25px;
+  height: 25px;
+
+  transition: all 0.3s;
+  background-size: contain;
+
+  cursor: pointer;
+
+  &_telegram {
+    background-image: url(../img/icons/telegram.svg);
+  }
+
+  &_instagram {
+    background-image: url(../img/icons/instagram.svg);
+  }
+
+  &_vk {
+    background-image: url(../img/icons/vk.svg);
+  }
+
+  &:hover {
+    opacity: 0.5;
+    scale: 120%;
+  }
+}

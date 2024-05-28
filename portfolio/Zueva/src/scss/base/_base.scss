@@ -1,0 +1,28 @@
+html {
+  @extend %main-font;
+  @include font-source($size: 10px, $weight: 100, $color: $color-text-main);
+}
+
+body {
+  background-color: $color-page-bg;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+h2 {
+  @include font-source(8rem, 1, 200, $color-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

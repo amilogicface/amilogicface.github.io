@@ -1,0 +1,109 @@
+.promo {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  background-image: url(../img/promo-bg.jpg);
+  background-size: 678px 691px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+.promo__about-placeholder {
+  display: flex;
+  flex-direction: column;
+  flex: 13;
+}
+
+.promo__logo {
+  text-transform: uppercase;
+  width: 100%;
+
+  & p {
+    display: block;
+    margin: 0;
+    padding: 0.3em 80px;
+
+    @include font-source(6.4vw, 1, 200);
+    letter-spacing: 0.1vw;
+
+    @extend .clearfix;
+
+    @media (width <=850px) {
+      font-size: 8vw;
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+
+    & span {
+      float: right;
+    }
+  }
+
+  & h1 {
+    padding: 1.5em 85px;
+
+    background-color: $color-text-main;
+
+    @include font-source(max(1.5rem, 1.4vw), 1.25, 100, white);
+    letter-spacing: 0.7vw;
+    word-spacing: -0.25vw;
+    text-align: center;
+
+    @extend .clearfix;
+
+    @media (width <=850px) {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+}
+
+.promo__text-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding: 0 85px;
+
+  @media (width <=850px) {
+    padding-left: 35px;
+    padding-right: 35px;
+    justify-content: space-evenly;
+  }
+}
+
+.attention-text {
+  margin: 0;
+
+  @include font-source(max(2rem, 2vw), 1.25, 300, $color-page-attention);
+  letter-spacing: 0.08vw;
+  word-spacing: -0.25vw;
+}
+
+.promo__slogan span {
+  text-align: right;
+  float: right;
+}
+
+.promo-services__list {
+  @include font-source(max(1.7rem, 1.6vw), 1, 400);
+}
+
+.promo-services__item:nth-child(2) {
+  padding: 10px 0;
+}
+
+.promo-services__item::after {
+  content: "✓";
+  margin-left: 1em;
+}
+
+.promo__image-placeholder {
+  flex: 8;
+  border-left: 1px solid $color-text-main;
+}
+
+.promo__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

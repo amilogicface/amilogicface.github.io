@@ -1,0 +1,32 @@
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  border: none;
+  @include font-source(max(2rem, 2vw), 1, 100, $color-page-bg);
+  text-transform: uppercase;
+
+  background-color: $color-page-attention;
+
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &_promo {
+    margin-left: auto;
+
+    @media (width <=850px) {
+      margin-right: 35px;
+    }
+  }
+
+  &:hover {
+    background-color: lighten($color-page-attention, 30%);
+    scale: 110%;
+  }
+
+  &:disabled {
+    opacity: 0.25;
+
+    cursor: default;
+  }
+}

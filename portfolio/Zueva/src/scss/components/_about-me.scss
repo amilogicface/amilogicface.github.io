@@ -1,0 +1,66 @@
+.about-me {
+  display: flex;
+  flex-direction: row-reverse;
+
+  border-top: 1px solid $color-text-main;
+
+  background-image: url(../img/about-me-bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.about-me__text-placeholder {
+  padding: 50px 0 50px 80px;
+  flex: 7;
+}
+
+.about-me__image-placeholder {
+  flex: 3;
+  border-right: 1px solid $color-text-main;
+}
+
+.about-me__headline {
+  display: flex;
+
+  & span {
+    flex-grow: 1;
+
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+
+    color: $color-page-bg;
+    background-color: $color-text-main;
+  }
+}
+
+.about-me__information {
+  margin: 100px 0;
+  padding-right: 80px;
+
+  text-align: end;
+}
+
+.about-me__slogan {
+  position: relative;
+  padding: 0 80px 0 160px;
+
+  @include font-source(max(1.7rem, 1.6vw), 1, 400);
+  text-align: justify;
+
+  &::before {
+    @include pseudo;
+
+    height: 92px;
+    width: 106px;
+
+    left: 0;
+    transform: translateY(-25%);
+
+    background-image: url(../img/arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+}
