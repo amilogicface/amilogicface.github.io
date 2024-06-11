@@ -1,0 +1,100 @@
+.services {
+
+  & .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 33px;
+    margin: -33px 0;
+  }
+}
+
+.service-block {
+  width: 50%;
+  padding: 33px;
+}
+
+.service-block__image {
+  height: 150px;
+  border: 1px solid $color-text-main;
+
+  background-image: url(../img/service-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.service-block__main-content {
+  padding: 0 30px;
+  border-left: 1px solid $color-text-main;
+  border-right: 1px solid $color-text-main;
+}
+
+.service-block__header {
+  padding: 30px 0 21px;
+  position: relative;
+  @include font-source(4.5rem);
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $color-text-main;
+
+  &::after {
+    @include pseudo();
+    height: 14px;
+    width: 14px;
+    background-color: $color-text-main;
+    border: 4px solid $color-page-bg;
+    border-radius: 100%;
+
+    bottom: calc(0px - 7px);
+    left: calc(50% - 7px);
+  }
+}
+
+.service-block__about {
+  margin: 0;
+  padding: 30px 0;
+  @include font-source(2rem);
+}
+
+.service-block__price-content {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 30px;
+  padding-top: 0;
+
+  border: 1px solid $color-text-main;
+  border-top: 0;
+
+  & > * {
+    flex-grow: 1;
+  }
+}
+
+.service-block__price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-block__price-option {
+
+  &:first-child {
+    padding-bottom: 15px;
+  }
+
+  & > * {
+    display: block;
+  }
+}
+
+.price-block__header {
+  @include font-source(1.5rem, $color: $color-text-mini);
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.price-block__price {
+  font-family: $second-font;
+  @include font-source(1.5rem, $color: $color-text-main);
+  text-transform: uppercase;
+
+}

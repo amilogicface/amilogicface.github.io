@@ -1,23 +1,38 @@
 .main-header {
   display: flex;
   flex-direction: column-reverse;
+  justify-content: flex-end;
+
+  height: 100vh;
+  min-height: 780px;
+
+  background-image: url(../img/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+
+  color: $color-page-bg;
 }
 
 .main-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 17px 35px 17px 85px;
-  border-bottom: 1px solid $color-text-main;
+  padding: 24px 40px;
+}
 
-  @media (width <=850px) {
-    padding-left: 35px;
-  }
+.main-nav__logo {
+  @extend %second-font;
+  @include font-source(2.4rem);
+  text-transform: uppercase;
+
+  padding-right: 40px;
 }
 
 .main-nav__list, .main-social-list {
   display: flex;
-  flex-direction: row;
+}
+
+.main-nav__list {
+  margin-top: 2px;
 }
 
 .main-nav__item {
@@ -34,11 +49,11 @@
   content: "";
   position: absolute;
   display: block;
-  bottom: 6px;
+  bottom: 5px;
   width: 0;
   height: 2px;
 
-  background-color: $color-text-main;
+  background-color: $color-page-bg;
   opacity: 0.5;
 
   transition: width 0.3s ease-out;
@@ -48,10 +63,15 @@
   width: 100%;
 }
 
+.main-nav__phone {
+  margin-top: 4px;
+  margin-left: auto;
+}
+
 .main-social-list__item {
-  padding-left: 35px;
+  padding-left: 20px;
 
   &:first-child {
-    padding-left: 0;
+    padding-left: 40px;
   }
 }

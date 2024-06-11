@@ -1,13 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+@font-face {
+  font-family: 'evolventabold';
+  src: url('../fonts/evolventa-bold.woff2') format('woff2'),
+    url('../fonts/evolventa-bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
-$main-font: "JetBrains Mono";
-$second-font: "JetBrains Mono";
+}
+
+@font-face {
+  font-family: 'evolventaregular';
+  src: url('../fonts/evolventa-regular.woff2') format('woff2'),
+    url('../fonts/evolventa-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$main-font: "evolventaregular", Arial, Helvetica, sans-serif;
+$second-font: "evolventabold", Arial, Helvetica, sans-serif;
 
 %main-font {
-  font-family: $main-font, Helvetica, Verdana, Arial, sans-serif;
+  font-family: $main-font;
 }
 
 %second-font {
-  font-family: $second-font, Helvetica, Verdana, Arial, sans-serif;
-
+  font-family: $second-font;
 }

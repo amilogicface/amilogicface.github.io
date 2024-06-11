@@ -1,0 +1,55 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 65px 65px;
+
+  height: 100%;
+
+  position: relative;
+}
+
+.hero__slogan {
+  padding-top: 80px;
+  @extend %second-font;
+  @include font-source(4.5rem, 1.35);
+
+  text-transform: uppercase;
+
+  & span {
+
+    @include font-source(7rem);
+  }
+}
+
+.hero-services__list {
+  padding-top: 100px;
+
+  @include font-source(2.6rem, 1.7);
+  letter-spacing: 2px;
+
+  padding-left: 30px;
+}
+
+.hero-services__item {
+  position: relative;
+}
+
+.hero-services__item::before {
+  @include pseudo();
+  width: 8px;
+  height: 8px;
+  left: -24px;
+
+  border-radius: 100%;
+  background-color: $color-page-bg;
+
+  top: 50%;
+  transform: translateY(calc(-50% - 1px));
+}
+
+.hero__button {
+  margin-top: auto;
+  padding: 35px 60px;
+  letter-spacing: 6px;
+}

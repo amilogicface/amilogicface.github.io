@@ -1,66 +1,99 @@
 .about-me {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
 
-  border-top: 1px solid $color-text-main;
+  position: relative;
 
-  background-image: url(../img/about-me-bg.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right bottom;
+  padding: 65px;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
-.about-me__text-placeholder {
-  padding: 50px 0 50px 80px;
-  flex: 7;
+.about-me__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 55;
+  padding-left: 65px;
 }
 
 .about-me__image-placeholder {
-  flex: 3;
-  border-right: 1px solid $color-text-main;
+  flex: 45;
+  position: relative;
+
+  &::after {
+    @include pseudo();
+    height: 30px;
+    width: 30px;
+    background-color: $color-text-main;
+
+    top: -15px;
+    left: -15px;
+  }
+}
+
+.about-me__image {
+  width: 100%;
+  height: auto;
 }
 
 .about-me__headline {
   display: flex;
+  text-transform: uppercase;
+  margin-bottom: 36px;
 
   & span {
     flex-grow: 1;
 
-    margin-left: 20px;
-    padding-left: 20px;
-    padding-bottom: 10px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-top: 7px;
+    margin-top: -7px;
 
     color: $color-page-bg;
     background-color: $color-text-main;
   }
 }
 
-.about-me__information {
-  margin: 100px 0;
-  padding-right: 80px;
+.about-me__text-placeholder {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
-  text-align: end;
+  padding-right: 65px;
+}
+
+.about-me__text {
+  flex-grow: 1;
+  margin: 0;
+
+  padding-bottom: 65px;
+
+  background-image: url(../img/flower.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
 }
 
 .about-me__slogan {
+  margin: 0;
+  padding: 65px 0;
   position: relative;
-  padding: 0 80px 0 160px;
 
-  @include font-source(max(1.7rem, 1.6vw), 1, 400);
-  text-align: justify;
+  @include font-source($color: $color-page-attention);
 
-  &::before {
-    @include pseudo;
+  border-top: 1px solid $color-text-main;
 
-    height: 92px;
-    width: 106px;
+  &::after {
+    @include pseudo();
 
-    left: 0;
-    transform: translateY(-25%);
+    height: 14px;
+    width: 14px;
+    background-color: $color-text-main;
+    border: 4px solid $color-page-bg;
+    border-radius: 100%;
 
-    background-image: url(../img/arrow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-
+    top: calc(0px - 7px);
+    left: calc(50% - 7px);
   }
 }
