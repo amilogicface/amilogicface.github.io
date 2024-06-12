@@ -1,0 +1,67 @@
+.styles-card {
+  display: flex;
+  border: 1px solid $color-text-main;
+
+  & button {
+    width: 100%;
+  }
+}
+
+.styles-card__text-placeholder {
+  flex: 1;
+  padding: 63px;
+
+  border-right: 1px solid $color-text-main;
+}
+
+.styles-card__slider-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  flex: 1;
+  padding: 63px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.styles-card__header {
+  text-align: center;
+  text-transform: uppercase;
+
+  & h3, span {
+    @include font-source(6.5rem);
+  }
+}
+
+.style-card__name-divider {
+  line-height: 0.2;
+}
+
+.styles-card__style-name {
+  display: block;
+  @include font-source($lh: 1, $color: $color-page-attention);
+}
+
+.styles-card__about-style {
+
+  & span {
+    @include font-source($color: $color-page-attention)
+  }
+}
+
+
+.portfolio__slider {}
+
+.slider {}
+
+.slider__image-placeholder {}
+
+.slider__button {}
+
+.slider__button_left {}
+
+.slider__button_right {}

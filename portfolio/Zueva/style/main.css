@@ -413,8 +413,7 @@ body {
 }
 
 .content-wrapper {
-  padding: 65px;
-  padding-top: 40px;
+  padding: 0 65px;
 }
 
 h2 {
@@ -717,7 +716,7 @@ a:hover {
 
 .about-me__slogan {
   margin: 0;
-  padding: 65px 0;
+  padding-top: 65px;
   position: relative;
   color: #e2504d;
   font-weight: initial;
@@ -829,4 +828,117 @@ a:hover {
   color: #1d1e0f;
   font-weight: initial;
   text-transform: uppercase;
+}
+
+.portfolio__about {
+  padding-bottom: 33px;
+}
+.portfolio__about p {
+  margin: 0;
+}
+
+.slider {
+  position: relative;
+}
+.slider img {
+  height: 100%;
+  width: auto;
+  margin-right: 33px;
+}
+
+.slider__image-placeholder {
+  display: flex;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.slider__button {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  overflow: hidden;
+  text-indent: 100px;
+  cursor: pointer;
+  border-radius: 100%;
+  top: calc(50% - 45px);
+  background-color: #e6e6e6;
+  transition: 0.3s all;
+}
+.slider__button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/arrows.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+}
+.slider__button:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+.slider__button_left {
+  left: -45px;
+}
+
+.slider__button_right {
+  right: -45px;
+  transform: rotate(180deg);
+}
+.slider__button_right:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+
+.styles-card {
+  display: flex;
+  border: 1px solid #1d1e0f;
+}
+.styles-card button {
+  width: 100%;
+}
+
+.styles-card__text-placeholder {
+  flex: 1;
+  padding: 63px;
+  border-right: 1px solid #1d1e0f;
+}
+
+.styles-card__slider-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  padding: 63px;
+}
+.styles-card__slider-placeholder img {
+  width: 100%;
+}
+
+.styles-card__header {
+  text-align: center;
+  text-transform: uppercase;
+}
+.styles-card__header h3, .styles-card__header span {
+  font-size: 6.5rem;
+  font-weight: initial;
+}
+
+.style-card__name-divider {
+  line-height: 0.2;
+}
+
+.styles-card__style-name {
+  display: block;
+  color: #e2504d;
+  font-weight: initial;
+  line-height: 1;
+}
+
+.styles-card__about-style span {
+  color: #e2504d;
+  font-weight: initial;
 }/*# sourceMappingURL=main.css.map */
