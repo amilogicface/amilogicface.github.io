@@ -9,10 +9,10 @@
 .slider {
   position: relative;
 
-  & img {
+  & > img {
     height: 100%;
     width: auto;
-    margin-right: 33px;
+    margin: 0 16px;
   }
 }
 

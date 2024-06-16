@@ -1,0 +1,63 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 65px;
+  margin-top: 65px;
+
+  height: 200px;
+  background-color: $color-text-main;
+
+  & p {
+    @include font-source(2rem, $color: $color-form-bg);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  & a {
+    display: inline-block;
+    position: relative;
+
+    @include font-source(2rem);
+  }
+
+  & a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+
+    background-color: $color-page-bg;
+    opacity: 0.5;
+
+    transition: width 0.3s ease-out;
+  }
+
+  & a:hover::after {
+    width: 100%;
+  }
+
+}
+
+.footer__slogan {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  & p {
+    @include font-source(1.5rem, $color: #999999);
+
+    & span:first-child {
+      margin-right: 70px;
+    }
+
+    & span:last-child {
+      margin-left: 70px;
+    }
+  }
+}

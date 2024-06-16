@@ -1,0 +1,143 @@
+.contacts-card {
+  display: flex;
+  border: 1px solid $color-text-main;
+}
+
+.contacts-card__text-placeholder {
+  border-right: 1px solid $color-text-main;
+  padding: 64px 30px;
+}
+
+.contacts-card__form-placeholder {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 30px;
+  background-color: $color-form-bg-dark;
+}
+
+.contacts-card__form-placeholder .contacts-card__header::after {
+  border-color: $color-form-bg-dark;
+}
+
+.contacts-card__header {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 44px;
+
+  @include font-source(4rem);
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $color-text-main;
+
+  &::after {
+    @include pseudo();
+
+    height: 14px;
+    width: 14px;
+    background-color: $color-text-main;
+    border: 4px solid $color-page-bg;
+    border-radius: 100%;
+
+    bottom: calc(0px - 7px);
+    left: calc(50% - 7px);
+  }
+}
+
+.contacts-card__about-contacts {
+  margin: 33px 0 64px;
+}
+
+.contacts-list {
+  padding-left: 26px;
+}
+
+.contacts-list__item {
+  padding-bottom: 33px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  & a {
+    display: flex;
+    align-items: center;
+
+    @include font-source(2.5rem);
+    text-transform: uppercase;
+  }
+}
+
+.contacts-card__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 26px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &_phone {
+    background-image: url(../img/icons/phone.svg);
+  }
+
+  &_email {
+    background-image: url(../img/icons/email.svg);
+  }
+
+  &_twit {
+    background-image: url(../img/icons/telegram_black.svg);
+  }
+
+  &_inst {
+    background-image: url(../img/icons/instagram_black.svg);
+  }
+}
+
+.contacts-card__form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 33px;
+
+  & > input, textarea {
+    padding: 25px;
+    margin-bottom: 33px;
+    background-color: $color-form-bg;
+    border: 0;
+    resize: vertical;
+
+    @include font-source(2.5rem, $color: $color-text-mini);
+
+    &:focus {
+      outline: 1px solid $color-text-main;
+    }
+
+    &::placeholder {
+      @include font-source(2.5rem, $color: $color-text-form);
+    }
+  }
+}
+
+.contacts-card__personal-data-placeholder {
+  display: flex;
+  align-items: center;
+  margin-bottom: 33px;
+
+  @include font-source(1.5rem);
+  text-transform: uppercase;
+
+  & > input {
+    margin-right: 5px;
+    border-radius: 0;
+  }
+}
+
+.contacts-card__button {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+
+.button {}

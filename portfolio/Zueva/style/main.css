@@ -394,7 +394,7 @@ html {
   font-family: "evolventaregular", Arial, Helvetica, sans-serif;
 }
 
-.hero__slogan, .main-nav__logo, h2 {
+.review-card__service-name, .hero__slogan, .main-nav__logo, h2 {
   font-family: "evolventabold", Arial, Helvetica, sans-serif;
 }
 
@@ -414,6 +414,13 @@ body {
 
 .content-wrapper {
   padding: 0 65px;
+}
+
+.block_double {
+  display: flex;
+}
+.block_double > * {
+  flex: 1;
 }
 
 h2 {
@@ -840,10 +847,10 @@ a:hover {
 .slider {
   position: relative;
 }
-.slider img {
+.slider > img {
   height: 100%;
   width: auto;
-  margin-right: 33px;
+  margin: 0 16px;
 }
 
 .slider__image-placeholder {
@@ -941,4 +948,267 @@ a:hover {
 .styles-card__about-style span {
   color: #e2504d;
   font-weight: initial;
+}
+
+.review-card {
+  width: 50%;
+  padding: 33px;
+  border: 1px solid #1d1e0f;
+  margin: 0 30px;
+}
+.review-card:first-child {
+  margin-left: 0;
+}
+.review-card:last-child {
+  margin-right: 0;
+}
+
+.review-card__header-placeholder {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.review-card__header-placeholder img {
+  border-radius: 100%;
+}
+
+.review-card__header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 33px;
+}
+
+.review-card__customer-name {
+  font-size: 4.5rem;
+  font-weight: initial;
+  text-transform: uppercase;
+}
+
+.review-card__about-service {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #8f9a92;
+  font-weight: initial;
+}
+
+.review-card__service-name {
+  font-size: 1.5rem;
+  font-weight: initial;
+  text-transform: uppercase;
+}
+
+.review-card__text-placeholder {
+  text-align: right;
+  padding-top: 33px;
+}
+.review-card__text-placeholder p {
+  margin-bottom: 33px;
+}
+
+.review__customer-link {
+  font-size: 1.5rem;
+  color: #8f9a92;
+  font-weight: initial;
+  text-transform: uppercase;
+  text-align: right;
+}
+.review__customer-link:hover {
+  text-decoration: underline;
+}
+
+.reviews .slider__image-placeholder {
+  max-height: none;
+}
+
+.contacts-card {
+  display: flex;
+  border: 1px solid #1d1e0f;
+}
+
+.contacts-card__text-placeholder {
+  border-right: 1px solid #1d1e0f;
+  padding: 64px 30px;
+}
+
+.contacts-card__form-placeholder {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 30px;
+  background-color: #f0f0f0;
+}
+
+.contacts-card__form-placeholder .contacts-card__header::after {
+  border-color: #f0f0f0;
+}
+
+.contacts-card__header {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 44px;
+  font-size: 4rem;
+  font-weight: initial;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1d1e0f;
+}
+.contacts-card__header::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 14px;
+  width: 14px;
+  background-color: #1d1e0f;
+  border: 4px solid #fff;
+  border-radius: 100%;
+  bottom: -7px;
+  left: calc(50% - 7px);
+}
+
+.contacts-card__about-contacts {
+  margin: 33px 0 64px;
+}
+
+.contacts-list {
+  padding-left: 26px;
+}
+
+.contacts-list__item {
+  padding-bottom: 33px;
+}
+.contacts-list__item:last-child {
+  padding-bottom: 0;
+}
+.contacts-list__item a {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: initial;
+  text-transform: uppercase;
+}
+
+.contacts-card__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 26px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contacts-card__icon_phone {
+  background-image: url(../img/icons/phone.svg);
+}
+.contacts-card__icon_email {
+  background-image: url(../img/icons/email.svg);
+}
+.contacts-card__icon_twit {
+  background-image: url(../img/icons/telegram_black.svg);
+}
+.contacts-card__icon_inst {
+  background-image: url(../img/icons/instagram_black.svg);
+}
+
+.contacts-card__form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 33px;
+}
+.contacts-card__form > input, .contacts-card__form textarea {
+  padding: 25px;
+  margin-bottom: 33px;
+  background-color: #fafafa;
+  border: 0;
+  resize: vertical;
+  font-size: 2.5rem;
+  color: #8f9a92;
+  font-weight: initial;
+}
+.contacts-card__form > input:focus, .contacts-card__form textarea:focus {
+  outline: 1px solid #1d1e0f;
+}
+.contacts-card__form > input::-moz-placeholder, .contacts-card__form textarea::-moz-placeholder {
+  font-size: 2.5rem;
+  color: #bcc6be;
+  font-weight: initial;
+}
+.contacts-card__form > input::placeholder, .contacts-card__form textarea::placeholder {
+  font-size: 2.5rem;
+  color: #bcc6be;
+  font-weight: initial;
+}
+
+.contacts-card__personal-data-placeholder {
+  display: flex;
+  align-items: center;
+  margin-bottom: 33px;
+  font-size: 1.5rem;
+  font-weight: initial;
+  text-transform: uppercase;
+}
+.contacts-card__personal-data-placeholder > input {
+  margin-right: 5px;
+  border-radius: 0;
+}
+
+.contacts-card__button {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 65px;
+  margin-top: 65px;
+  height: 200px;
+  background-color: #1d1e0f;
+}
+.footer p {
+  font-size: 2rem;
+  color: #fafafa;
+  font-weight: initial;
+  text-transform: uppercase;
+  margin: 0;
+}
+.footer a {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  font-weight: initial;
+}
+.footer a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: width 0.3s ease-out;
+}
+.footer a:hover::after {
+  width: 100%;
+}
+
+.footer__slogan {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer__slogan p {
+  font-size: 1.5rem;
+  color: #999999;
+  font-weight: initial;
+}
+.footer__slogan p span:first-child {
+  margin-right: 70px;
+}
+.footer__slogan p span:last-child {
+  margin-left: 70px;
 }/*# sourceMappingURL=main.css.map */

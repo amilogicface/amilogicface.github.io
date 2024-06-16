@@ -1,0 +1,71 @@
+.review-card {
+  width: 50%;
+  padding: 33px;
+  border: 1px solid $color-text-main;
+  margin: 0 30px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.review-card__header-placeholder {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & img {
+    border-radius: 100%;
+  }
+}
+
+.review-card__header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 33px;
+}
+
+.review-card__customer-name {
+  @include font-source(4.5rem);
+  text-transform: uppercase;
+}
+
+
+.review-card__about-service {
+  text-transform: uppercase;
+  @include font-source(1.5rem, $color: $color-text-mini);
+}
+
+.review-card__service-name {
+  @extend %second-font;
+  @include font-source(1.5rem);
+  text-transform: uppercase;
+
+}
+
+.review-card__text-placeholder {
+  text-align: right;
+  padding-top: 33px;
+
+  & p {
+    margin-bottom: 33px;
+  }
+}
+
+.review__customer-link {
+  @include font-source(1.5rem, $color: $color-text-mini);
+  text-transform: uppercase;
+  text-align: right;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.reviews .slider__image-placeholder {
+  max-height: none;
+}
