@@ -28,6 +28,11 @@ body {
 h2 {
   @extend %second-font;
   @include font-source(7rem);
+
+  @media (width < 750px) {
+
+    @include font-source(5rem);
+  }
 }
 
 p {
@@ -60,8 +65,9 @@ a {
   text-transform: uppercase;
 
   & span {
-    flex-grow: 1;
+    flex: 1;
     position: relative;
+    margin-left: 20px;
 
     @include font-source($color: $color-page-bg);
     background-color: $color-text-main;
@@ -79,7 +85,7 @@ a {
     &::after {
       @include pseudo();
       width: 100%;
-      height: 20px;
+      height: 18px;
 
       bottom: 0;
 

@@ -3,16 +3,30 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 0 65px;
-  margin-top: 65px;
+  padding: 0 60px;
+  margin-top: 60px;
 
-  height: 200px;
+  min-height: 200px;
   background-color: $color-text-main;
+
+  @media (width < 800px) {
+    flex-direction: column;
+    padding-top: 60px;
+  }
 
   & p {
     @include font-source(2rem, $color: $color-form-bg);
     text-transform: uppercase;
     margin: 0;
+
+    @media (width < 1000px) {
+      @include font-source(1rem);
+    }
+
+    @media (width < 800px) {
+      @include font-source(2rem);
+      margin-bottom: 60px;
+    }
   }
 
   & a {
@@ -20,6 +34,14 @@
     position: relative;
 
     @include font-source(2rem);
+
+    @media (width < 1000px) {
+      @include font-source(1rem)
+    }
+
+    @media (width < 800px) {
+      @include font-source(2rem)
+    }
   }
 
   & a::after {
@@ -48,6 +70,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (width < 1200px) {
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    transform: none;
+  }
 
   & p {
     @include font-source(1.5rem, $color: #999999);

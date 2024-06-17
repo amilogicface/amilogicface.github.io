@@ -5,6 +5,10 @@
   & button {
     width: 100%;
   }
+
+  @media (width < 900px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .styles-card__text-placeholder {
@@ -12,6 +16,11 @@
   padding: 63px;
 
   border-right: 1px solid $color-text-main;
+
+  @media (width < 900px) {
+    border-right: none;
+    border-top: 1px solid $color-text-main;
+  }
 }
 
 .styles-card__slider-placeholder {
@@ -52,16 +61,3 @@
     @include font-source($color: $color-page-attention)
   }
 }
-
-
-.portfolio__slider {}
-
-.slider {}
-
-.slider__image-placeholder {}
-
-.slider__button {}
-
-.slider__button_left {}
-
-.slider__button_right {}

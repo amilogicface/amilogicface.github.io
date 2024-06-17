@@ -427,6 +427,12 @@ h2 {
   font-size: 7rem;
   font-weight: initial;
 }
+@media (width < 750px) {
+  h2 {
+    font-size: 5rem;
+    font-weight: initial;
+  }
+}
 
 p {
   font-size: 2.4rem;
@@ -457,8 +463,9 @@ a:hover {
   text-transform: uppercase;
 }
 .sections-header span {
-  flex-grow: 1;
+  flex: 1;
   position: relative;
+  margin-left: 20px;
   color: #fff;
   font-weight: initial;
   background-color: #1d1e0f;
@@ -477,7 +484,7 @@ a:hover {
   position: absolute;
   display: block;
   width: 100%;
-  height: 20px;
+  height: 18px;
   bottom: 0;
   background-color: #fff;
 }
@@ -532,7 +539,6 @@ a:hover {
   flex-direction: column-reverse;
   justify-content: flex-end;
   height: 100vh;
-  min-height: 780px;
   background-image: url(../img/hero-bg.jpg);
   background-position: center;
   background-size: cover;
@@ -559,9 +565,24 @@ a:hover {
 .main-nav__list {
   margin-top: 2px;
 }
+@media (width < 900px) {
+  .main-nav__list {
+    margin-left: auto;
+  }
+}
+@media (width < 760px) {
+  .main-nav__list {
+    display: none;
+  }
+}
 
 .main-nav__item {
   padding-right: 25px;
+}
+@media (width < 900px) {
+  .main-nav__item:last-child {
+    padding-right: 0;
+  }
 }
 
 .main-nav__link {
@@ -591,6 +612,22 @@ a:hover {
   margin-top: 4px;
   margin-left: auto;
 }
+@media (width < 1070px) {
+  .main-nav__phone {
+    display: none;
+  }
+}
+
+@media (width < 1070px) {
+  .main-social-list {
+    margin-left: auto;
+  }
+}
+@media (width < 900px) {
+  .main-social-list {
+    display: none;
+  }
+}
 
 .main-social-list__item {
   padding-left: 20px;
@@ -598,14 +635,50 @@ a:hover {
 .main-social-list__item:first-child {
   padding-left: 40px;
 }
+@media (width < 1070px) {
+  .main-social-list__item:first-child {
+    padding-left: 0;
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 26px;
+  width: 26px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.burger span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.burger:hover {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+@media (width >= 760px) {
+  .burger {
+    display: none;
+  }
+}
 
 .hero {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 65px 65px;
+  padding: 0 60px 60px;
   height: 100%;
   position: relative;
+}
+@media (width < 750px) {
+  .hero {
+    align-items: stretch;
+  }
 }
 
 .hero__slogan {
@@ -615,8 +688,16 @@ a:hover {
   line-height: 1.35;
   text-transform: uppercase;
 }
+@media (width < 750px) {
+  .hero__slogan {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: initial;
+  }
+}
 .hero__slogan span {
-  font-size: 7rem;
+  font-size: 1.55em;
   font-weight: initial;
 }
 
@@ -628,9 +709,21 @@ a:hover {
   letter-spacing: 2px;
   padding-left: 30px;
 }
+@media (width < 750px) {
+  .hero-services__list {
+    padding-left: 25px;
+    font-size: 2rem;
+    font-weight: initial;
+  }
+}
 
 .hero-services__item {
   position: relative;
+}
+@media (width < 750px) {
+  .hero-services__item {
+    text-align: left;
+  }
 }
 
 .hero-services__item::before {
@@ -657,7 +750,7 @@ a:hover {
   flex-direction: row-reverse;
   justify-content: space-between;
   position: relative;
-  padding: 65px;
+  padding: 60px;
   padding-right: 0;
   padding-bottom: 0;
 }
@@ -667,7 +760,12 @@ a:hover {
   flex-direction: column;
   width: 100%;
   flex: 55;
-  padding-left: 65px;
+  padding-left: 60px;
+}
+@media (width < 800px) {
+  .about-me__content {
+    padding-left: 0;
+  }
 }
 
 .about-me__image-placeholder {
@@ -683,6 +781,11 @@ a:hover {
   background-color: #1d1e0f;
   top: -15px;
   left: -15px;
+}
+@media (width < 800px) {
+  .about-me__image-placeholder {
+    display: none;
+  }
 }
 
 .about-me__image {
@@ -709,13 +812,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding-right: 65px;
+  padding-right: 60px;
 }
 
 .about-me__text {
   flex-grow: 1;
   margin: 0;
-  padding-bottom: 65px;
+  padding-bottom: 60px;
   background-image: url(../img/flower.png);
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -723,7 +826,7 @@ a:hover {
 
 .about-me__slogan {
   margin: 0;
-  padding-top: 65px;
+  padding-top: 60px;
   position: relative;
   color: #e2504d;
   font-weight: initial;
@@ -752,6 +855,11 @@ a:hover {
 .service-block {
   width: 50%;
   padding: 33px;
+}
+@media (width < 800px) {
+  .service-block {
+    width: 100%;
+  }
 }
 
 .service-block__image {
@@ -807,6 +915,29 @@ a:hover {
 }
 .service-block__price-content > * {
   flex-grow: 1;
+}
+@media (width < 900px) {
+  .service-block__price-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media (width < 800px) {
+  .service-block__price-content {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+@media (width < 900px) {
+  .price-block {
+    padding-bottom: 30px;
+  }
+}
+@media (width < 800px) {
+  .price-block {
+    padding-bottom: 0;
+  }
 }
 
 .service-block__price-block {
@@ -906,11 +1037,22 @@ a:hover {
 .styles-card button {
   width: 100%;
 }
+@media (width < 900px) {
+  .styles-card {
+    flex-direction: column-reverse;
+  }
+}
 
 .styles-card__text-placeholder {
   flex: 1;
   padding: 63px;
   border-right: 1px solid #1d1e0f;
+}
+@media (width < 900px) {
+  .styles-card__text-placeholder {
+    border-right: none;
+    border-top: 1px solid #1d1e0f;
+  }
 }
 
 .styles-card__slider-placeholder {
@@ -1018,16 +1160,33 @@ a:hover {
 
 .reviews .slider__image-placeholder {
   max-height: none;
+  flex-wrap: nowrap;
+}
+@media (width < 800px) {
+  .reviews .review-card {
+    min-width: 100%;
+  }
 }
 
 .contacts-card {
   display: flex;
   border: 1px solid #1d1e0f;
 }
+@media (width < 900px) {
+  .contacts-card {
+    flex-direction: column;
+  }
+}
 
 .contacts-card__text-placeholder {
   border-right: 1px solid #1d1e0f;
   padding: 64px 30px;
+}
+@media (width < 900px) {
+  .contacts-card__text-placeholder {
+    border-right: none;
+    border-bottom: 1px solid #1d1e0f;
+  }
 }
 
 .contacts-card__form-placeholder {
@@ -1161,10 +1320,16 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 0 65px;
-  margin-top: 65px;
-  height: 200px;
+  padding: 0 60px;
+  margin-top: 60px;
+  min-height: 200px;
   background-color: #1d1e0f;
+}
+@media (width < 800px) {
+  .footer {
+    flex-direction: column;
+    padding-top: 60px;
+  }
 }
 .footer p {
   font-size: 2rem;
@@ -1173,11 +1338,36 @@ a:hover {
   text-transform: uppercase;
   margin: 0;
 }
+@media (width < 1000px) {
+  .footer p {
+    font-size: 1rem;
+    font-weight: initial;
+  }
+}
+@media (width < 800px) {
+  .footer p {
+    font-size: 2rem;
+    font-weight: initial;
+    margin-bottom: 60px;
+  }
+}
 .footer a {
   display: inline-block;
   position: relative;
   font-size: 2rem;
   font-weight: initial;
+}
+@media (width < 1000px) {
+  .footer a {
+    font-size: 1rem;
+    font-weight: initial;
+  }
+}
+@media (width < 800px) {
+  .footer a {
+    font-size: 2rem;
+    font-weight: initial;
+  }
 }
 .footer a::after {
   content: "";
@@ -1200,6 +1390,14 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media (width < 1200px) {
+  .footer__slogan {
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    transform: none;
+  }
 }
 .footer__slogan p {
   font-size: 1.5rem;

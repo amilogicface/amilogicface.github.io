@@ -1,11 +1,21 @@
 .contacts-card {
   display: flex;
   border: 1px solid $color-text-main;
+
+
+  @media (width < 900px) {
+    flex-direction: column;
+  }
 }
 
 .contacts-card__text-placeholder {
   border-right: 1px solid $color-text-main;
   padding: 64px 30px;
+
+  @media (width < 900px) {
+    border-right: none;
+    border-bottom: 1px solid $color-text-main;
+  }
 }
 
 .contacts-card__form-placeholder {

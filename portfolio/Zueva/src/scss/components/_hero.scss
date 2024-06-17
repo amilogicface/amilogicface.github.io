@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 65px 65px;
+  padding: 0 60px 60px;
 
   height: 100%;
 
   position: relative;
+
+  @media (width <750px) {
+    align-items: stretch;
+  }
 }
 
 .hero__slogan {
@@ -16,9 +20,16 @@
 
   text-transform: uppercase;
 
+  @media (width <750px) {
+    padding-top: 40px;
+
+    text-align: center;
+    @include font-source(4rem);
+  }
+
   & span {
 
-    @include font-source(7rem);
+    @include font-source(1.55em);
   }
 }
 
@@ -29,10 +40,20 @@
   letter-spacing: 2px;
 
   padding-left: 30px;
+
+  @media (width <750px) {
+    padding-left: 25px;
+    @include font-source(2rem);
+  }
+
 }
 
 .hero-services__item {
   position: relative;
+
+  @media (width <750px) {
+    text-align: left;
+  }
 }
 
 .hero-services__item::before {

@@ -4,7 +4,6 @@
   justify-content: flex-end;
 
   height: 100vh;
-  min-height: 780px;
 
   background-image: url(../img/hero-bg.jpg);
   background-position: center;
@@ -33,10 +32,24 @@
 
 .main-nav__list {
   margin-top: 2px;
+
+  @media (width < 900px) {
+    margin-left: auto;
+  }
+
+  @media (width < 760px) {
+    display: none;
+  }
 }
 
 .main-nav__item {
   padding-right: 25px;
+
+  @media (width < 900px) {
+    &:last-child {
+      padding-right: 0;
+    }
+  }
 }
 
 .main-nav__link {
@@ -66,6 +79,21 @@
 .main-nav__phone {
   margin-top: 4px;
   margin-left: auto;
+
+  @media (width < 1070px) {
+    display: none;
+  }
+}
+
+.main-social-list {
+
+  @media (width < 1070px) {
+    margin-left: auto;
+  }
+
+  @media (width < 900px) {
+    display: none;
+  }
 }
 
 .main-social-list__item {
@@ -73,5 +101,38 @@
 
   &:first-child {
     padding-left: 40px;
+
+    @media (width < 1070px) {
+      padding-left: 0;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 26px;
+  width: 26px;
+  margin-left: auto;
+
+  cursor: pointer;
+  transition: 0.3s all;
+
+  & span {
+    width: 100%;
+    height: 3px;
+
+    background-color: $color-page-bg;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+
+  @media (width >=760px) {
+    display: none;
   }
 }

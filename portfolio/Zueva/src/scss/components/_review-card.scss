@@ -68,4 +68,13 @@
 
 .reviews .slider__image-placeholder {
   max-height: none;
+  flex-wrap: nowrap;
+
+  @media (width < 800px) {}
+}
+
+.reviews .review-card {
+  @media (width < 800px) {
+    min-width: 100%;
+  }
 }

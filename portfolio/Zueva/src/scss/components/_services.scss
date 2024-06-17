@@ -11,6 +11,10 @@
 .service-block {
   width: 50%;
   padding: 33px;
+
+  @media (width < 800px) {
+    width: 100%;
+  }
 }
 
 .service-block__image {
@@ -67,6 +71,27 @@
 
   & > * {
     flex-grow: 1;
+  }
+
+  @media (width < 900px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @media (width < 800px) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.price-block {
+
+  @media (width < 900px) {
+    padding-bottom: 30px;
+  }
+
+  @media (width < 800px) {
+    padding-bottom: 0;
   }
 }
 
