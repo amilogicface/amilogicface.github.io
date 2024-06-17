@@ -4,6 +4,7 @@
   justify-content: flex-end;
 
   height: 100vh;
+  min-height: 720px;
 
   background-image: url(../img/hero-bg.jpg);
   background-position: center;
@@ -115,6 +116,7 @@
   height: 26px;
   width: 26px;
   margin-left: auto;
+  margin-top: -5px;
 
   cursor: pointer;
   transition: 0.3s all;
