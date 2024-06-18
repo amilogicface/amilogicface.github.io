@@ -9,9 +9,10 @@
   padding: 60px;
 
   @media (width < $media-tablet) {
-    margin-top: 75px;
+    justify-content: space-evenly;
     align-items: stretch;
-    padding: 30px;
+    margin-top: 75px;
+    padding: 0 30px;
   }
 }
 
