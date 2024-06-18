@@ -3,51 +3,75 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  padding: 60px;
-
-  height: 100%;
 
   position: relative;
+  height: 100%;
+  padding: 60px;
 
-  @media (width < 750px) {
+  @media (width < $media-tablet) {
+    margin-top: 75px;
     align-items: stretch;
+    padding: 30px;
   }
 }
+
+// СТИЛИ ЗАГОЛОВКА
 
 .hero__slogan {
   @extend %second-font;
   @include font-source(4.5rem, 1.35);
-
   text-transform: uppercase;
+  text-shadow: 0px 10px 20px $color-text-paragraph;
 
-  @media (width <750px) {
+  @media (width < $media-tablet) {
     text-align: center;
-    @include font-source(5vw);
+    @include font-source(6vw);
   }
 
   & span {
-    @include font-source(1.55em);
+    @include font-source(1.1em);
   }
 }
 
+// СТИЛИ КАРТИНКИ ДЛЯ МОБИЛЬНЫХ
+
+.hero__image-placeholder {
+  width: 213px;
+  height: 213px;
+  align-self: center;
+  overflow: hidden;
+
+  border-radius: 100%;
+  border: 5px solid $color-form-bg;
+  box-shadow: 0px 5px 20px $color-text-paragraph;
+
+  @media (width >=$media-tablet) {
+    display: none;
+  }
+}
+
+.hero__master-image {
+  width: 100%;
+  height: auto;
+}
+
+// СТИЛИ ПЕРЕЧНЯ ОСНОВНЫХ УСЛУГ
+
 .hero-services__list {
   @include font-source(2.6rem, 1.7);
-  letter-spacing: 2px;
-
   padding-left: 30px;
 
-  @media (width <750px) {
-    padding-left: 25px;
-    @include font-source(2.5vw);
+  @media (width < $media-tablet) {
+    padding-left: 0;
+    @include font-source(4.5vw);
   }
-
 }
 
 .hero-services__item {
   position: relative;
 
-  @media (width <750px) {
-    text-align: left;
+  @media (width < $media-tablet) {
+    text-align: center;
   }
 }
 
@@ -62,13 +86,20 @@
 
   top: 50%;
   transform: translateY(calc(-50% - 1px));
+
+  @media (width < $media-tablet) {
+    display: none;
+  }
 }
+
+// СТИЛИ ДЛЯ КНОПКИ
 
 .hero__button {
   padding: 35px 60px;
   letter-spacing: 2px;
 
-  @media (width <750px) {
-    @include font-source(2.5vw);
+  @media (width < $media-tablet) {
+    padding: 1.5em 0;
+    @include font-source(4vw);
   }
 }

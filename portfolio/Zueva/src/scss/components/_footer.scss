@@ -11,7 +11,9 @@
 
   @media (width < 800px) {
     flex-direction: column;
-    padding-top: 60px;
+    align-items: stretch;
+
+    padding: 60px 30px 0;
   }
 
   & p {
@@ -24,8 +26,10 @@
     }
 
     @media (width < 800px) {
-      @include font-source(2rem);
       margin-bottom: 60px;
+
+      @include font-source(2rem);
+      text-align: center;
     }
   }
 
@@ -64,6 +68,8 @@
 
 }
 
+// СТИЛИ ЦЕНТРАЛЬНОГО ТЕКСТА
+
 .footer__slogan {
   position: absolute;
   display: block;
@@ -80,13 +86,22 @@
 
   & p {
     @include font-source(1.5rem, $color: #999999);
+    text-align: center;
 
     & span:first-child {
       margin-right: 70px;
+
+      @media (width < 380px) {
+        margin-right: 50px;
+      }
     }
 
     & span:last-child {
       margin-left: 70px;
+
+      @media (width < 380px) {
+        margin-left: 50px;
+      }
     }
   }
 }

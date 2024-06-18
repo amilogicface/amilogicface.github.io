@@ -13,7 +13,7 @@
 
 @mixin media-source($type: false) {
   @if $type ==laptop {
-    @media (width <=$media-laptop) {
+    @media (width <=$media-tablet) {
       @content;
     }
   }

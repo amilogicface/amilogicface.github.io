@@ -8,6 +8,7 @@ body {
 }
 
 .wrapper {
+  overflow: hidden;
   width: 100%;
 }
 
@@ -29,7 +30,7 @@ h2 {
   @extend %second-font;
   @include font-source(7rem);
 
-  @media (width < 750px) {
+  @media (width < $media-tablet) {
 
     @include font-source(5rem);
   }
