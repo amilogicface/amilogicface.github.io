@@ -5,9 +5,11 @@
 
   position: relative;
 
-  padding: 60px;
-  padding-right: 0;
-  padding-bottom: 0;
+  padding: 60px 0 0 60px;
+
+  @media (width < $media-tablet) {
+    padding: 60px 0 0 30px;
+  }
 }
 
 .about-me__content {
@@ -70,22 +72,20 @@
   flex-grow: 1;
 
   padding-right: 60px;
+
+  @media (width < $media-tablet) {
+    padding-right: 30px;
+  }
 }
 
 .about-me__text {
-  flex-grow: 1;
-  margin: 0;
-
-  padding-bottom: 60px;
-
-  background-image: url(../img/flower.png);
-  background-position: bottom center;
-  background-repeat: no-repeat;
+  margin-bottom: 30px;
 }
 
 .about-me__slogan {
   margin: 0;
   padding-top: 60px;
+  margin-top: 30px;
   position: relative;
 
   @include font-source($color: $color-page-attention);

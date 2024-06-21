@@ -4,6 +4,7 @@ const mainNavigation = document.querySelector('.main-nav__list')
 
 function showMainNavigation() {
   mainNavigation.classList.toggle('main-nav__list_show')
+  burger.classList.toggle('burger_active')
 }
 
 function hideMainNavigation() {
@@ -19,7 +20,15 @@ addEventListener('resize', function () {
 })
 
 document.addEventListener('click', function (e) {
-  if (!(e.target === burger || e.target.parentNode === burger)) {
+  if (!burger.contains(e.target)) {
     hideMainNavigation()
+    burger.classList.remove('burger_active')
+  }
+})
+
+document.addEventListener('keydown', function (e) {
+  if (e.keyCode === 27) {
+    hideMainNavigation()
+    burger.classList.remove('burger_active')
   }
 })

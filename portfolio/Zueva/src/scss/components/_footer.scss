@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -34,8 +35,6 @@
   }
 
   & a {
-    display: inline-block;
-    position: relative;
 
     @include font-source(2rem);
 
@@ -46,24 +45,6 @@
     @media (width < 800px) {
       @include font-source(2rem)
     }
-  }
-
-  & a::after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: 2px;
-    width: 0;
-    height: 2px;
-
-    background-color: $color-page-bg;
-    opacity: 0.5;
-
-    transition: width 0.3s ease-out;
-  }
-
-  & a:hover::after {
-    width: 100%;
   }
 
 }

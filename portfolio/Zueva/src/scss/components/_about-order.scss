@@ -1,0 +1,23 @@
+.layout_one-column {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid $color-text-main
+}
+
+.about-order {
+  padding: 0 60px 60px;
+}
+
+.about-order__header {}
+
+.about-order__message {}
+
+.about-order__link {
+  @include font-source(1.5rem, $color: $color-text-mini);
+  text-transform: uppercase;
+
+  &::after {
+    background-color: $color-text-mini;
+  }
+}

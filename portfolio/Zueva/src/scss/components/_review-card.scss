@@ -1,6 +1,6 @@
 .review-card {
   width: 50%;
-  padding: 33px;
+  padding: 30px;
   border: 1px solid $color-text-main;
   margin: 0 30px;
 
@@ -16,28 +16,50 @@
 .review-card__header-placeholder {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 
   & img {
     border-radius: 100%;
+    max-width: 213px;
+  }
+
+  @media (width < 1300px) {
+    flex-direction: column;
   }
 }
 
 .review-card__header {
   display: flex;
   flex-direction: column;
-  margin-left: 33px;
+  margin-left: 30px;
+
+  @media (width < 1300px) {
+    margin: 0;
+    padding-top: 30px;
+  }
 }
 
 .review-card__customer-name {
   @include font-source(4.5rem);
   text-transform: uppercase;
+
+  @media (width < 1300px) {
+    padding-bottom: 15px;
+    @include font-source(8vw);
+    text-align: center;
+  }
 }
 
 
 .review-card__about-service {
   text-transform: uppercase;
   @include font-source(1.5rem, $color: $color-text-mini);
+
+  @media (width < 1300px) {
+    text-align: center;
+    padding-bottom: 7px;
+  }
 }
 
 .review-card__service-name {
@@ -45,14 +67,22 @@
   @include font-source(1.5rem);
   text-transform: uppercase;
 
+  @media (width < 1300px) {
+    text-align: center;
+  }
 }
 
 .review-card__text-placeholder {
   text-align: right;
-  padding-top: 33px;
+  padding-top: 30px;
 
   & p {
-    margin-bottom: 33px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  @media (width < 400px) {
+    text-align: center;
   }
 }
 
@@ -61,20 +91,18 @@
   text-transform: uppercase;
   text-align: right;
 
-  &:hover {
-    text-decoration: underline;
+  &::after {
+    background-color: $color-text-mini;
   }
 }
 
 .reviews .slider__image-placeholder {
   max-height: none;
   flex-wrap: nowrap;
-
-  @media (width < 800px) {}
 }
 
 .reviews .review-card {
-  @media (width < 800px) {
+  @media (width < 900px) {
     min-width: 100%;
   }
 }

@@ -11,7 +11,7 @@
 <body>
   <div class="wrapper">
 
-    <header class="main-header">
+    <!-- <header class="main-header">
 
 
       <div class="hero">
@@ -76,6 +76,10 @@
           <p class="about-me__text">Я — профессиональный практикующий стилист. Более 5 лет меняю
             гардеробы как женщин, так и мужчин! Предпочитаю работать в минималистичном стиле, придерживаться
             нравственных правил в работе и не идти на поводу у «тёмной» стороны моды</p>
+
+          <p class="about-me__text">Расскажу, как выглядеть женственно, элегантно и современно.
+            Помогу создать функциональный гардероб, который будет соответствовать вашему уникальному стилю.
+            Научу носить современные тренды, подчеркивая свою индивидуальность.</p>
 
           <p class="about-me__slogan">— «Мир изменился. Шопинг изменился. Я расскажу как с помощью одежды транслировать
             себя, выглядеть стильно и дорого этой кризисной весной и всегда!»</p>
@@ -279,7 +283,7 @@
             <p class="styles-card__about-style"><span>Minimal</span> – это направление моды, которое даёт вам лёгкость,
               уверенность и подчёркивает красоту в её естественной простоте. Этот стиль лучшим образом подходит для
               поездок, деловых встреч и повседневного общения с коллегами.</p>
-            <button class="button">Собрать свой стиль</button>
+            <button class="button styles-card__button">Собрать свой стиль</button>
           </div>
 
           <div class="styles-card__slider-placeholder">
@@ -301,7 +305,7 @@
 
     <section class="reviews">
 
-      <h2 class="reviews__header sections-header">Отзывы клиентов<span></span></h2>
+      <h2 class="reviews__header sections-header">Отзывы<span></span></h2>
 
       <div class="content-wrapper">
 
@@ -352,7 +356,7 @@
         </div>
       </div>
 
-    </section>
+    </section> -->
 
 
 
@@ -370,7 +374,7 @@
             </span>
             <p class="contacts-card__about-contacts">
               Чтобы записаться на услугу или задать вопрос вы можете связаться со мной любым удобным для вас способом
-              представленным ниже или заполнить форму обратной связи справа.
+              представленным ниже или заполнить форму обратной связи в соседнем блоке.
             </p>
             <ul class="contacts-card__contacts-list contacts-list">
               <li class="contacts-list__item"><a href="tel:+ 7 (977) 945-96-16"><span
@@ -387,15 +391,16 @@
 
           <div class="contacts-card__form-placeholder">
             <span class="contacts-card__header">
-              Форма для связи:
+              Форма связи:
             </span>
-            <form class="contacts-card__form" action="#">
-              <input type="text" placeholder="Ваше имя">
-              <input type="text" placeholder="Ваш e'mail">
-              <textarea cols="2" placeholder="Ваше сообщение"></textarea>
+            <form class="contacts-card__form" action="order-send.php">
+              <input type="text" name="customer-name" placeholder="Ваше имя" required>
+              <input type="text" name="customer-email" placeholder="Ваш e'mail" required>
+              <input type="text" name="customer-phone" placeholder="Ваш номер телефона" required>
+              <textarea type="text" name="customer-message" placeholder="Ваше сообщение"></textarea>
               <div class="contacts-card__personal-data-placeholder">
-                <input type="checkbox">
-                <span>– Я даю согласие на обработку моих персональных данных.</span>
+                <input type="checkbox" id="personal-data-agree" required>
+                <label for="personal-data-agree">– Я даю согласие на обработку моих персональных данных.</label>
               </div>
               <button class="button contacts-card__button">Отправить</button>
             </form>

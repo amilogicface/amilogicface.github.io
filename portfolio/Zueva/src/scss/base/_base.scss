@@ -7,18 +7,35 @@ body {
   background-color: $color-page-bg;
 }
 
-.wrapper {
-  overflow: hidden;
+section {
   width: 100%;
 }
 
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_all-centered {
+    height: 100vh;
+  }
+}
+
 .content-wrapper {
-  padding: 0 65px;
+  padding: 0 60px;
+
+  @media (width < $media-tablet) {
+    padding: 0 30px;
+  }
 }
 
 .block {
   &_double {
     display: flex;
+    flex-wrap: wrap;
 
     & > * {
       flex: 1;
@@ -32,16 +49,45 @@ h2 {
 
   @media (width < $media-tablet) {
 
-    @include font-source(5rem);
+    @include font-source(11vw);
+  }
+}
+
+h3 {
+  padding: 30px 0 21px;
+  position: relative;
+  @include font-source(4.5rem);
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $color-text-main;
+
+  &::after {
+    @include pseudo();
+    height: 14px;
+    width: 14px;
+    background-color: $color-text-main;
+    border: 4px solid $color-page-bg;
+    border-radius: 100%;
+
+    bottom: calc(0px - 7px);
+    left: calc(50% - 7px);
+  }
+
+  @media (width < $media-tablet) {
+    @include font-source(6vw);
+
   }
 }
 
 p {
-  @include font-source(2.4rem, 1.4, $color: $color-text-paragraph);
+  @include font-source(2rem, 1.4, $color: $color-text-paragraph);
   text-align: justify;
 }
 
 a {
+  display: inline-block;
+  position: relative;
+
   @include font-source(1.7rem);
   color: inherit;
   text-decoration: none;
@@ -49,21 +95,42 @@ a {
   cursor: pointer;
   transition: all 0.3s;
 
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+
+    background-color: $color-page-bg;
+    opacity: 0.5;
+
+    transition: width 0.3s ease-out;
+  }
+
   &:hover {
-    cursor: pointer;
 
     opacity: 0.5;
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 
 .sections-header {
   display: flex;
 
-  padding-left: 65px;
+  padding-left: 60px;
   padding-top: 58px;
   padding-bottom: 45px;
 
   text-transform: uppercase;
+
+  @media (width < $media-tablet) {
+    padding-left: 30px;
+  }
 
   & span {
     flex: 1;
@@ -76,7 +143,7 @@ a {
     &::before {
       @include pseudo();
       width: 100%;
-      height: 9px;
+      height: 0.135em;
 
       top: 0;
 
@@ -86,7 +153,7 @@ a {
     &::after {
       @include pseudo();
       width: 100%;
-      height: 18px;
+      height: 0.28em;
 
       bottom: 0;
 

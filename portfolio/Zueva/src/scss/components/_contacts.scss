@@ -1,27 +1,12 @@
-.contacts-card {
-  display: flex;
-  border: 1px solid $color-text-main;
-
-
-  @media (width < 900px) {
-    flex-direction: column;
-  }
-}
-
-.contacts-card__text-placeholder {
-  border-right: 1px solid $color-text-main;
-  padding: 64px 30px;
-
-  @media (width < 900px) {
-    border-right: none;
-    border-bottom: 1px solid $color-text-main;
-  }
+.contacts-card__text-placeholder, .contacts-card__form-placeholder {
+  padding: 60px 30px;
+  outline: 1px solid $color-text-main;
 }
 
 .contacts-card__form-placeholder {
   display: flex;
   flex-direction: column;
-  padding: 64px 30px;
+
   background-color: $color-form-bg-dark;
 }
 
@@ -34,7 +19,7 @@
   position: relative;
   width: 100%;
   text-align: center;
-  padding-bottom: 44px;
+  padding-bottom: 50px;
 
   @include font-source(4rem);
   text-transform: uppercase;
@@ -53,18 +38,27 @@
     bottom: calc(0px - 7px);
     left: calc(50% - 7px);
   }
+
+  @media (width < $media-tablet) {
+    @include font-source(7vw);
+
+  }
 }
 
 .contacts-card__about-contacts {
-  margin: 33px 0 64px;
+  margin: 30px 0 64px;
 }
 
 .contacts-list {
   padding-left: 26px;
+
+  @media (width < $media-tablet) {
+    padding-left: 0;
+  }
 }
 
 .contacts-list__item {
-  padding-bottom: 33px;
+  padding-bottom: 30px;
 
   &:last-child {
     padding-bottom: 0;
@@ -76,6 +70,10 @@
 
     @include font-source(2.5rem);
     text-transform: uppercase;
+
+    @media (width < $media-tablet) {
+      @include font-source(4.3vw);
+    }
   }
 }
 
@@ -87,6 +85,10 @@
 
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (width < $media-tablet) {
+    margin-right: 12px;
+  }
 
   &_phone {
     background-image: url(../img/icons/phone.svg);
@@ -109,13 +111,17 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin-top: 33px;
+  margin-top: 30px;
 
   & > input, textarea {
+    width: 100%;
+
     padding: 25px;
-    margin-bottom: 33px;
+    margin-bottom: 30px;
+
     background-color: $color-form-bg;
     border: 0;
+
     resize: vertical;
 
     @include font-source(2.5rem, $color: $color-text-mini);
@@ -126,28 +132,73 @@
 
     &::placeholder {
       @include font-source(2.5rem, $color: $color-text-form);
+
+      @media (width < $media-tablet) {
+        @include font-source(2rem);
+      }
+    }
+
+    @media (width < $media-tablet) {
+      @include font-source(2rem);
+      padding: 20px;
+    }
+  }
+
+  & textarea {
+    @media (width < $media-tablet) {
+      height: 160px;
     }
   }
 }
 
 .contacts-card__personal-data-placeholder {
   display: flex;
-  align-items: center;
-  margin-bottom: 33px;
+  margin-bottom: 30px;
 
   @include font-source(1.5rem);
   text-transform: uppercase;
 
   & > input {
-    margin-right: 5px;
-    border-radius: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked + label::before {
+      background-image: url(../img/icons/circle.svg);
+      background-position: center;
+      background-size: 40%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @media (width < $media-tablet) {
+      align-items: start;
+    }
+  }
+
+  & label::before {
+    content: '';
+    flex-shrink: 0;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    width: 24px;
+    height: 24px;
+
+    border: 2px solid $color-text-main;
+    background-color: $color-form-bg;
   }
 }
 
 .contacts-card__button {
   margin-top: auto;
   align-self: flex-end;
+
+  @media (width < $media-tablet) {
+    align-self: stretch;
+  }
 }
-
-
-.button {}

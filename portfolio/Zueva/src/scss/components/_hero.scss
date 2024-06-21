@@ -96,11 +96,12 @@
 // СТИЛИ ДЛЯ КНОПКИ
 
 .hero__button {
-  padding: 35px 60px;
+  padding: 30px 50px;
   letter-spacing: 2px;
 
   @media (width < $media-tablet) {
-    padding: 1.5em 0;
+    align-self: center;
+    padding: 1em 1em 0.9em;
     @include font-source(4vw);
   }
 }

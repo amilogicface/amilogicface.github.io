@@ -1,5 +1,5 @@
 .portfolio__about {
-  padding-bottom: 33px;
+  padding-bottom: 30px;
 
   & p {
     margin: 0;
@@ -10,10 +10,9 @@
   position: relative;
 
   & > img {
-    height: 100%;
-    width: auto;
     margin: 0 16px;
   }
+
 }
 
 .slider__image-placeholder {
@@ -21,6 +20,13 @@
   overflow: hidden;
 
   max-height: 400px;
+
+  @media (width < $media-tablet) {
+    > img {
+      min-width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .slider__button {
