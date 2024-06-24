@@ -12,7 +12,7 @@
     justify-content: space-evenly;
     align-items: stretch;
     margin-top: 75px;
-    padding: 0 30px;
+    padding: 30px;
   }
 }
 
@@ -20,17 +20,17 @@
 
 .hero__slogan {
   @extend %second-font;
-  @include font-source(4.5rem, 1.35);
+  @include font-source(6rem, 1.3);
   text-transform: uppercase;
-  text-shadow: 0px 10px 20px $color-text-paragraph;
+  text-shadow: 0px 10px 20px $color-page-shadow;
 
   @media (width < $media-tablet) {
     text-align: center;
-    @include font-source(6vw);
+    @include font-source(8vw);
   }
 
   & span {
-    @include font-source(1.1em);
+    @include font-source(0.8em);
   }
 }
 
@@ -41,6 +41,8 @@
   height: 213px;
   align-self: center;
   overflow: hidden;
+
+  margin: 15px 0;
 
   border-radius: 100%;
   border: 5px solid $color-form-bg;
@@ -64,12 +66,13 @@
 
   @media (width < $media-tablet) {
     padding-left: 0;
-    @include font-source(4.5vw);
+    @include font-source(4.5vw, 1.2);
   }
 }
 
 .hero-services__item {
   position: relative;
+  text-shadow: 0px 5px 15px $color-page-shadow;
 
   @media (width < $media-tablet) {
     text-align: center;

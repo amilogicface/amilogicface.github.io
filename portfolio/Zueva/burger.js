@@ -9,6 +9,7 @@ function showMainNavigation() {
 
 function hideMainNavigation() {
   mainNavigation.classList.remove('main-nav__list_show')
+  burger.classList.remove('burger_active')
 }
 
 burger.addEventListener('click', function () {

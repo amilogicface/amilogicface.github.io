@@ -79,12 +79,16 @@
 }
 
 .about-me__text {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .about-me__slogan {
   margin: 0;
-  padding-top: 60px;
+  padding-top: 45px;
   margin-top: 30px;
   position: relative;
 

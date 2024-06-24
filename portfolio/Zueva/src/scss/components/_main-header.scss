@@ -16,6 +16,7 @@
   @media (width < $media-tablet) {
     min-height: 640px;
     background-image: url(../img/mobile-bg.jpg);
+    background-position: top;
   }
 }
 
@@ -57,7 +58,7 @@
   }
 
   @media (width < $media-tablet) {
-    z-index: 1;
+    z-index: 2;
     padding-right: 0;
   }
 }
@@ -83,6 +84,7 @@
     height: 100vh;
     padding: 115px 40px;
     margin: 0;
+    z-index: 1;
 
     background-color: $color-text-mini;
     transition: 0.3s all;
@@ -144,6 +146,7 @@
 
   @media (width < $media-tablet) {
     display: flex;
+    z-index: 0;
     margin-left: 0;
   }
 }

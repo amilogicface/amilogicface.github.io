@@ -1,8 +1,10 @@
 .review-card {
   width: 50%;
-  padding: 30px;
-  border: 1px solid $color-text-main;
   margin: 0 30px;
+
+  padding: 30px;
+
+  border: 1px solid $color-text-main;
 
   &:first-child {
     margin-left: 0;
@@ -16,80 +18,60 @@
 .review-card__header-placeholder {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+
+  margin-bottom: 20px;
 
   & img {
     border-radius: 100%;
-    max-width: 213px;
-  }
-
-  @media (width < 1300px) {
-    flex-direction: column;
+    max-width: 220px;
+    padding: 15px;
   }
 }
 
 .review-card__header {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-
-  @media (width < 1300px) {
-    margin: 0;
-    padding-top: 30px;
-  }
+  text-align: center;
 }
 
 .review-card__customer-name {
   @include font-source(4.5rem);
   text-transform: uppercase;
 
-  @media (width < 1300px) {
-    padding-bottom: 15px;
-    @include font-source(8vw);
-    text-align: center;
-  }
+  margin-bottom: 15px;
 }
 
 
 .review-card__about-service {
-  text-transform: uppercase;
   @include font-source(1.5rem, $color: $color-text-mini);
+  text-transform: uppercase;
 
-  @media (width < 1300px) {
-    text-align: center;
-    padding-bottom: 7px;
-  }
+  padding-bottom: 5px;
 }
 
 .review-card__service-name {
   @extend %second-font;
   @include font-source(1.5rem);
   text-transform: uppercase;
-
-  @media (width < 1300px) {
-    text-align: center;
-  }
 }
 
 .review-card__text-placeholder {
+  margin-top: 20px;
+
   text-align: right;
-  padding-top: 30px;
 
   & p {
     margin-top: 0;
     margin-bottom: 30px;
   }
 
-  @media (width < 400px) {
-    text-align: center;
-  }
 }
 
 .review__customer-link {
   @include font-source(1.5rem, $color: $color-text-mini);
   text-transform: uppercase;
-  text-align: right;
 
   &::after {
     background-color: $color-text-mini;
@@ -102,7 +84,7 @@
 }
 
 .reviews .review-card {
-  @media (width < 900px) {
+  @media (width < $media-tablet) {
     min-width: 100%;
   }
 }

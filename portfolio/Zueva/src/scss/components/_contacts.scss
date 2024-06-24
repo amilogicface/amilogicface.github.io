@@ -4,6 +4,7 @@
 }
 
 .contacts-card__form-placeholder {
+  min-width: 260px;
   display: flex;
   flex-direction: column;
 
@@ -145,31 +146,16 @@
   }
 
   & textarea {
-    @media (width < $media-tablet) {
-      height: 160px;
-    }
+    min-height: 160px;
   }
 }
 
-.contacts-card__personal-data-placeholder {
+.connection-form__personal-data-placeholder {
   display: flex;
   margin-bottom: 30px;
 
   @include font-source(1.5rem);
   text-transform: uppercase;
-
-  & > input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-
-    &:checked + label::before {
-      background-image: url(../img/icons/circle.svg);
-      background-position: center;
-      background-size: 40%;
-      background-repeat: no-repeat;
-    }
-  }
 
   & label {
     display: flex;
@@ -180,25 +166,37 @@
       align-items: start;
     }
   }
-
-  & label::before {
-    content: '';
-    flex-shrink: 0;
-    margin-right: 10px;
-    margin-bottom: 3px;
-    width: 24px;
-    height: 24px;
-
-    border: 2px solid $color-text-main;
-    background-color: $color-form-bg;
-  }
 }
 
-.contacts-card__button {
+.connection-form__button {
   margin-top: auto;
   align-self: flex-end;
 
   @media (width < $media-tablet) {
     align-self: stretch;
   }
+}
+
+.connection-form__data-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.connection-form__checkbox-style {
+  flex-shrink: 0;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid $color-text-main;
+  background-color: $color-form-bg;
+}
+
+.connection-form__data-checkbox:checked + .connection-form__checkbox-style {
+  background-image: url(../img/icons/circle.svg);
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
 }

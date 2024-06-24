@@ -11,16 +11,12 @@
 <body>
   <div class="wrapper">
 
-    <!-- <header class="main-header">
+    <header class="main-header">
 
 
       <div class="hero">
 
-        <h1 class="hero__slogan">Персональный стилист<br> <span>Стилизатор съемок</span></h1>
-
-        <div class="hero__image-placeholder">
-          <img src="img/mobile-zueva.jpg" alt="Персональный стилист Ирина Зуева" class="hero__master-image">
-        </div>
+        <h1 class="hero__slogan">Личный стилист<br> <span>Стилизатор съемок</span></h1>
 
         <ul class="hero-services__list">
           <li class="hero-services__item">Разработка индивидуального стиля</li>
@@ -72,6 +68,10 @@
         <h2 class="about-me__headline">Обо <span>мне</span></h2>
 
         <div class="about-me__text-placeholder">
+
+          <div class="hero__image-placeholder">
+            <img src="img/mobile-zueva.jpg" alt="Персональный стилист Ирина Зуева" class="hero__master-image">
+          </div>
 
           <p class="about-me__text">Я — профессиональный практикующий стилист. Более 5 лет меняю
             гардеробы как женщин, так и мужчин! Предпочитаю работать в минималистичном стиле, придерживаться
@@ -274,17 +274,6 @@
       <div class="content-wrapper">
 
         <div class="styles-card">
-          <div class="styles-card__text-placeholder">
-            <div class="styles-card__header">
-              <h3>Стилистика</h3>
-              <span class="style-card__name-divider">—</span>
-              <span class="styles-card__style-name">Minimal</span>
-            </div>
-            <p class="styles-card__about-style"><span>Minimal</span> – это направление моды, которое даёт вам лёгкость,
-              уверенность и подчёркивает красоту в её естественной простоте. Этот стиль лучшим образом подходит для
-              поездок, деловых встреч и повседневного общения с коллегами.</p>
-            <button class="button styles-card__button">Собрать свой стиль</button>
-          </div>
 
           <div class="styles-card__slider-placeholder">
             <div class="portfolio__slider slider">
@@ -295,6 +284,19 @@
               <span class="slider__button slider__button_left">Влево</span>
               <span class="slider__button slider__button_right">Вправо</span>
             </div>
+          </div>
+
+          <div class="styles-card__text-placeholder">
+            <div class="styles-card__header">
+              <h3>Стилистика</h3>
+              <span class="style-card__name-divider">—</span>
+              <span class="styles-card__style-name">Minimal</span>
+            </div>
+            <p class="styles-card__about-style"><span>Minimal</span> – это направление моды, которое даёт вам
+              лёгкость,
+              уверенность и подчёркивает красоту в её естественной простоте. Этот стиль лучшим образом подходит для
+              поездок, деловых встреч и повседневного общения с коллегами.</p>
+            <button class="button styles-card__button">Собрать свой стиль</button>
           </div>
         </div>
 
@@ -317,7 +319,7 @@
                 <div class="review-card__header-placeholder">
                   <img src="img/review.jpg" alt="Отзыв">
                   <div class="review-card__header">
-                    <span class="review-card__customer-name">Ксения Р.</span>
+                    <span class="review-card__customer-name">Ксения</span>
                     <span class="review-card__about-service">Об услуге:</span>
                     <span class="review-card__service-name">Разбор гардероба</span>
                   </div>
@@ -326,7 +328,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
                     accumsan lacus vel facilisis.</p>
-                  <a href="" class="review__customer-link">ссылка на отзыв в соц. сетях</a>
+                  <a href="" class="review__customer-link">Cсылка на отзыв</a>
                 </div>
 
               </div>
@@ -335,7 +337,7 @@
                 <div class="review-card__header-placeholder">
                   <img src="img/review.jpg" alt="Отзыв">
                   <div class="review-card__header">
-                    <span class="review-card__customer-name">Ксения Р.</span>
+                    <span class="review-card__customer-name">Ксения</span>
                     <span class="review-card__about-service">Об услуге:</span>
                     <span class="review-card__service-name">Разбор гардероба</span>
                   </div>
@@ -344,7 +346,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
                     accumsan lacus vel facilisis.</p>
-                  <a href="" class="review__customer-link">ссылка на отзыв в соц. сетях</a>
+                  <a href="" class="review__customer-link">Ссылка на отзыв</a>
                 </div>
 
               </div>
@@ -356,7 +358,7 @@
         </div>
       </div>
 
-    </section> -->
+    </section>
 
 
 
@@ -393,16 +395,22 @@
             <span class="contacts-card__header">
               Форма связи:
             </span>
-            <form class="contacts-card__form" action="order-send.php">
+            <form class="contacts-card__form connection-form" action="order-send.php">
+
               <input type="text" name="customer-name" placeholder="Ваше имя" required>
               <input type="text" name="customer-email" placeholder="Ваш e'mail" required>
               <input type="text" name="customer-phone" placeholder="Ваш номер телефона" required>
               <textarea type="text" name="customer-message" placeholder="Ваше сообщение"></textarea>
-              <div class="contacts-card__personal-data-placeholder">
-                <input type="checkbox" id="personal-data-agree" required>
-                <label for="personal-data-agree">– Я даю согласие на обработку моих персональных данных.</label>
+
+              <div class="connection-form__personal-data-placeholder">
+                <label>
+                  <input class="connection-form__data-checkbox" type="checkbox" required>
+                  <span class="connection-form__checkbox-style"></span>
+                  <span class="connection-form__data-about">– Я даю согласие на обработку моих персональных
+                    данных.</span>
+                </label>
               </div>
-              <button class="button contacts-card__button">Отправить</button>
+              <button class="button connection-form__button">Отправить</button>
             </form>
           </div>
         </div>
@@ -419,7 +427,36 @@
       <p>Разработка сайта: <a href="#">logicface</a>.</p>
     </footer>
 
+    <div class="modal">
+      <div class="modal__content">
+        <div class="contacts-card__form-placeholder">
+          <span class="contacts-card__header">
+            Форма связи:
+          </span>
+          <form class="contacts-card__form connection-form" action="order-send.php">
+
+            <input type="text" name="customer-name" placeholder="Ваше имя" required>
+            <input type="text" name="customer-email" placeholder="Ваш e'mail" required>
+            <input type="text" name="customer-phone" placeholder="Ваш номер телефона" required>
+            <textarea type="text" name="customer-message" placeholder="Ваше сообщение"></textarea>
+
+            <div class="connection-form__personal-data-placeholder">
+              <label>
+                <input class="connection-form__data-checkbox" type="checkbox" required>
+                <span class="connection-form__checkbox-style"></span>
+                <span class="connection-form__data-about">– Я даю согласие на обработку моих персональных
+                  данных.</span>
+              </label>
+            </div>
+            <button class="button connection-form__button">Отправить</button>
+          </form>
+        </div>
+        <span class="modal__close-button"></span>
+      </div>
+    </div>
+
     <script src="burger.js"></script>
+    <script src="modal.js"></script>
 </body>
 
 </html>

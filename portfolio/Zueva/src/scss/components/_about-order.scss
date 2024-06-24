@@ -6,14 +6,30 @@
 }
 
 .about-order {
-  padding: 0 60px 60px;
+  align-items: flex-start;
+  margin: 60px;
+  padding: 0 60px 30px;
+
+  @media (width < $media-tablet) {
+    margin: 30px;
+    padding: 0 30px 30px;
+  }
+
+  & .contacts-list {
+    margin: 10px 0 30px;
+  }
 }
 
-.about-order__header {}
+.about-order__header {
+  align-self: stretch;
 
-.about-order__message {}
+  @media (width < $media-tablet) {
+    text-align: center;
+  }
+}
 
 .about-order__link {
+
   @include font-source(1.5rem, $color: $color-text-mini);
   text-transform: uppercase;
 
