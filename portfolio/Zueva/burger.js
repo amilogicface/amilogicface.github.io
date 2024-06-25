@@ -18,6 +18,7 @@ burger.addEventListener('click', function () {
 
 addEventListener('resize', function () {
   hideMainNavigation()
+  modal.classList.remove('modal_show')
 })
 
 document.addEventListener('click', function (e) {
@@ -31,5 +32,6 @@ document.addEventListener('keydown', function (e) {
   if (e.keyCode === 27) {
     hideMainNavigation()
     burger.classList.remove('burger_active')
+    modal.classList.remove('modal_show')
   }
 })

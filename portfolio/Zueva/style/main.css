@@ -1034,7 +1034,6 @@ a:hover::after {
 
 .service-block {
   flex: 1 0 50%;
-  min-width: 500px;
   padding: 30px;
 }
 @media (width < 768px) {
