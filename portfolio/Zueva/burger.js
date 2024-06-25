@@ -18,7 +18,6 @@ burger.addEventListener('click', function () {
 
 addEventListener('resize', function () {
   hideMainNavigation()
-  modal.classList.remove('modal_show')
 })
 
 document.addEventListener('click', function (e) {

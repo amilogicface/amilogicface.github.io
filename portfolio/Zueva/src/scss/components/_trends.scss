@@ -10,7 +10,7 @@
 }
 
 .styles-card__text-placeholder {
-  flex: 1;
+  flex: 1 0 50%;
   padding: 60px;
 
   outline: 1px solid $color-text-main;
@@ -22,21 +22,27 @@
 }
 
 .styles-card__slider-placeholder {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 
-  flex: 1;
+  flex: 1 0 50%;
   padding: 60px;
 
   @media (width < $media-tablet) {
     padding: 30px;
   }
+}
 
-  & img {
-    min-width: 100%;
-  }
+.styles-card__slider-placeholder .slider__screen {
+  width: 100%;
+}
+
+.styles-card__slider-placeholder .slider__element {
+  width: 100%;
 }
 
 .styles-card__header {

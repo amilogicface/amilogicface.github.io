@@ -78,9 +78,9 @@
   }
 }
 
-.reviews .slider__image-placeholder {
-  max-height: none;
-  flex-wrap: nowrap;
+.reviews .slider__element {
+  flex: 0 0 calc(50% - 15px);
+  height: inherit;
 }
 
 .reviews .review-card {

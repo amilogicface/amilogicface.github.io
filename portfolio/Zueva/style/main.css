@@ -406,6 +406,7 @@ html {
 
 body {
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 section {
@@ -1119,65 +1120,6 @@ a:hover::after {
   margin: 0;
 }
 
-.slider {
-  position: relative;
-}
-.slider > img {
-  margin: 0 16px;
-}
-
-.slider__image-placeholder {
-  display: flex;
-  overflow: hidden;
-  max-height: 400px;
-}
-@media (width < 768px) {
-  .slider__image-placeholder > img {
-    min-width: 100%;
-    height: auto;
-  }
-}
-
-.slider__button {
-  position: absolute;
-  height: 90px;
-  width: 90px;
-  overflow: hidden;
-  text-indent: 100px;
-  cursor: pointer;
-  border-radius: 100%;
-  top: calc(50% - 45px);
-  background-color: #e6e6e6;
-  transition: 0.3s all;
-}
-.slider__button::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 90px;
-  height: 90px;
-  background-image: url(../img/arrows.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.2;
-}
-.slider__button:hover {
-  transform: scale(1.2);
-  opacity: 0.7;
-}
-
-.slider__button_left {
-  left: -45px;
-}
-
-.slider__button_right {
-  right: -45px;
-  transform: rotate(180deg);
-}
-.slider__button_right:hover {
-  transform: rotate(180deg) scale(1.2);
-}
-
 .styles-card {
   display: flex;
   flex-wrap: wrap;
@@ -1188,7 +1130,7 @@ a:hover::after {
 }
 
 .styles-card__text-placeholder {
-  flex: 1;
+  flex: 1 0 50%;
   padding: 60px;
   outline: 1px solid #1d1e0f;
 }
@@ -1200,11 +1142,13 @@ a:hover::after {
 }
 
 .styles-card__slider-placeholder {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  flex: 1;
+  overflow: hidden;
+  flex: 1 0 50%;
   padding: 60px;
 }
 @media (width < 768px) {
@@ -1212,8 +1156,13 @@ a:hover::after {
     padding: 30px;
   }
 }
-.styles-card__slider-placeholder img {
-  min-width: 100%;
+
+.styles-card__slider-placeholder .slider__screen {
+  width: 100%;
+}
+
+.styles-card__slider-placeholder .slider__element {
+  width: 100%;
 }
 
 .styles-card__header {
@@ -1336,9 +1285,9 @@ a:hover::after {
   background-color: #8f9a92;
 }
 
-.reviews .slider__image-placeholder {
-  max-height: none;
-  flex-wrap: nowrap;
+.reviews .slider__element {
+  flex: 0 0 calc(50% - 15px);
+  height: inherit;
 }
 
 @media (width < 768px) {
@@ -1702,6 +1651,75 @@ a:hover::after {
   background-position: center;
   background-size: cover;
   cursor: pointer;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider__overlay {
+  overflow: hidden;
+}
+
+.slider__screen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px;
+  transition: 0.3s all;
+}
+
+.slider__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 300px;
+}
+.slider__element > * {
+  height: 100%;
+  width: auto;
+}
+
+.slider__button {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  overflow: hidden;
+  top: calc(50% - 45px);
+  text-indent: 100px;
+  border-radius: 100%;
+  background-color: #e6e6e6;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.slider__button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 90px;
+  height: 90px;
+  background-image: url(../img/arrows.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+}
+.slider__button:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+.slider__button_left {
+  left: -45px;
+}
+
+.slider__button_right {
+  right: -45px;
+  transform: rotate(180deg);
+}
+.slider__button_right:hover {
+  transform: rotate(180deg) scale(1.2);
 }
 
 .layout_one-column {
