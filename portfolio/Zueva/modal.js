@@ -19,6 +19,7 @@ function getScrollbarWidth() {
 
 let scrollBarWidth = getScrollbarWidth()
 const modal = document.getElementsByClassName('modal')[0]
+const modalCloseButton = document.querySelector('.modal__close-button')
 
 let form = document.getElementsByClassName('contacts-card__form-placeholder')[0]
 let formClone = form.cloneNode(true)
@@ -39,5 +40,15 @@ modal.addEventListener('transitionend', () => {
   if (!modal.classList.contains('modal_show')) {
     document.body.style.overflow = ''
     document.body.style.marginRight = ''
+  }
+})
+
+modalCloseButton.addEventListener('click', e => {
+  console.log(1)
+  if (
+    modalCloseButton.contains(e.target) &&
+    modal.classList.contains('modal_show')
+  ) {
+    modal.classList.remove('modal_show')
   }
 })
