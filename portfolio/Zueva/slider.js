@@ -10,10 +10,12 @@ class Slider {
       sliderContainer.getElementsByClassName('slider__element') // Перебираемый объект элементов слайдера
 
     this.leftButton = sliderContainer.querySelector('.slider__button_left')
-
     this.rightButton = sliderContainer.querySelector('.slider__button_right')
 
     this.currentSlide = 0 // Текущий слайд (нужен для расчёта ширины сдвига)
+
+    this.isEnd = false
+    this.isStart = true
 
     // Расчет ширин
 
@@ -22,9 +24,6 @@ class Slider {
     this.transformWidth = 0 // Кумулятивный размер, на который будет сдвигаться слайдер
 
     this.maxWidth = 0 // Максимальная ширина, состоящая из всех элементов с отступами
-
-    this.isEnd = false
-    this.isStart = true
 
     for (let item of this.sliderElements) {
       this.maxWidth += item.getBoundingClientRect().width + this.slideGap
@@ -40,6 +39,28 @@ class Slider {
     })
     this.rightButton.addEventListener('click', () => {
       this.toRight()
+    })
+    this.see()
+  }
+
+  see() {
+    addEventListener('resize', () => {
+      this.slideGap = +window
+        .getComputedStyle(this.sliderScreen)
+        .gap.slice(0, 2) // Правый отступ элементов
+
+      this.transformWidth = 0 // Кумулятивный размер, на который будет сдвигаться слайдер
+
+      this.maxWidth = 0 // Максимальная ширина, состоящая из всех элементов с отступами
+
+      for (let item of this.sliderElements) {
+        this.maxWidth += item.getBoundingClientRect().width + this.slideGap
+      }
+
+      this.maxWidth -= this.slideGap // Максимальная ширина, состоящая из всех элементов без последнего отступа
+      this.WidthRemainder = this.maxWidth // Будет высчитываться остаток ширины слайдера, который еще не был пролистан
+
+      this.sliderScreenWidth = this.sliderScreen.clientWidth // Узнаем ширину рабочей области слайдера
     })
   }
 

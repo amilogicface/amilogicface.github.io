@@ -1289,6 +1289,11 @@ a:hover::after {
   flex: 0 0 calc(50% - 15px);
   height: inherit;
 }
+@media (width < 768px) {
+  .reviews .slider__element {
+    flex: 0 0 100%;
+  }
+}
 
 @media (width < 768px) {
   .reviews .review-card {
