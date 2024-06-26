@@ -56,46 +56,55 @@ class Slider {
     } else {
       this.WidthRemainder += currentSlideWidth + this.slideGap
     }
-    console.log(this.WidthRemainder)
     return this.WidthRemainder
   }
 
   getTransformWidth(side) {
+    console.log('считалка начало', this.transformWidth)
     if (side === 'right') {
       this.transformWidth -=
         this.sliderElements[this.currentSlide].getBoundingClientRect().width +
         this.slideGap
+      console.log(this.currentSlide)
     } else {
       this.transformWidth +=
         this.sliderElements[this.currentSlide].getBoundingClientRect().width +
         this.slideGap
     }
-    console.log(this.transformWidth)
+    console.log('считалка конец', this.transformWidth)
   }
 
   toLeft() {
-    if (!this.isStart && this.currentSlide > 0) {
+    console.log('лево', this.transformWidth)
+    if (!this.isStart) {
+      this.currentSlide -= 1
       this.getTransformWidth('left')
       this.isEnd = false
     }
 
     if (!this.isStart && this.currentSlide > 0 && this.transformWidth <= 0) {
       this.getRemainderOfSliderWidth(
-        this.sliderElements[this.currentSlide].getBoundingClientRect().width,
+        this.sliderElements[this.currentSlide - 1].getBoundingClientRect()
+          .width,
         'left'
       )
-      this.currentSlide -= 1
       this.sliderScreen.style.transform = `translateX(${this.transformWidth}px)`
-    } else {
+    }
+    if (this.transformWidth >= 0) {
       this.isStart = true
       this.sliderScreen.style.transform = `translateX(0px)`
+      this.transformWidth = 0
+      this.currentSlide = 0
+      this.WidthRemainder = this.maxWidth
     }
   }
 
   toRight() {
+    console.log('право', this.transformWidth)
     if (!this.isEnd) {
       this.getTransformWidth('right')
       this.isStart = false
+      this.currentSlide += 1
     }
 
     if (
@@ -105,14 +114,13 @@ class Slider {
         'right'
       ) > this.sliderScreenWidth
     ) {
-      this.currentSlide += 1
       this.sliderScreen.style.transform = `translateX(${this.transformWidth}px)`
     } else {
       this.sliderScreen.style.transform = `translateX(${this.getMaxShift()}px)`
       this.isEnd = true
-      this.currentSlide = this.sliderElements.length - 1
+      this.currentSlide = this.sliderElements.length
+      this.transformWidth = this.getMaxShift()
     }
-    console.log(this.currentSlide)
   }
 }
 
