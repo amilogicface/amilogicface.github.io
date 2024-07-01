@@ -394,7 +394,7 @@ html {
   font-family: "evolventaregular", Arial, Helvetica, sans-serif;
 }
 
-.review-card__service-name, .hero__slogan, .main-nav__logo, h2 {
+.review-card__service-name, .service-block__title, .hero__slogan, .main-nav__logo, h2 {
   font-family: "evolventabold", Arial, Helvetica, sans-serif;
 }
 
@@ -456,7 +456,7 @@ h2 {
 h3 {
   padding: 30px 0 21px;
   position: relative;
-  font-size: 4.5rem;
+  font-size: 2.8rem;
   font-weight: initial;
   text-transform: uppercase;
   border-bottom: 1px solid #1d1e0f;
@@ -478,6 +478,13 @@ h3::after {
     font-size: 6vw;
     font-weight: initial;
   }
+}
+
+h4 {
+  padding: 35px 0;
+  font-size: 3.5rem;
+  font-weight: initial;
+  text-transform: uppercase;
 }
 
 p {
@@ -929,7 +936,7 @@ a:hover::after {
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex: 55;
+  flex: 65;
   padding-left: 60px;
 }
 @media (width < 800px) {
@@ -939,7 +946,7 @@ a:hover::after {
 }
 
 .about-me__image-placeholder {
-  flex: 45;
+  flex: 35;
   position: relative;
 }
 .about-me__image-placeholder::after {
@@ -990,23 +997,20 @@ a:hover::after {
   }
 }
 
-.about-me__text {
+.about-me__starter p {
   margin-bottom: 15px;
 }
-.about-me__text:first-child {
+.about-me__starter p:first-child {
   margin-top: 0;
 }
 
-.about-me__slogan {
+.about-me__description-block {
   margin: 0;
-  padding-top: 45px;
   margin-top: 30px;
   position: relative;
-  color: #eba96f;
-  font-weight: initial;
   border-top: 1px solid #1d1e0f;
 }
-.about-me__slogan::after {
+.about-me__description-block::after {
   content: "";
   position: absolute;
   display: block;
@@ -1018,13 +1022,33 @@ a:hover::after {
   top: -7px;
   left: calc(50% - 7px);
 }
+.about-me__description-block img {
+  width: 30%;
+  float: right;
+  padding-left: 30px;
+}
+.about-me__description-block img + p {
+  margin-top: 0;
+}
+
+.about-me__list {
+  list-style: disc;
+  margin-left: 15px;
+}
+
+.about-me__item {
+  font-size: 2rem;
+  font-weight: initial;
+  line-height: 1.7;
+  padding-left: 10px;
+}
 
 .services .content-wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 30px;
-  margin: -30px 0;
+  margin-top: -30px;
 }
 @media (width < 768px) {
   .services .content-wrapper {
@@ -1036,6 +1060,7 @@ a:hover::after {
 .service-block {
   flex: 1 0 50%;
   padding: 30px;
+  min-width: 525px;
 }
 @media (width < 768px) {
   .service-block {
@@ -1060,11 +1085,35 @@ a:hover::after {
   border-right: 1px solid #1d1e0f;
 }
 
+.service-block__title {
+  display: block;
+  padding-top: 30px;
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+
 .service-block__about {
   margin: 0;
   padding: 30px 0;
   font-size: 2rem;
   font-weight: initial;
+}
+
+.service-block__list {
+  padding-top: 15px;
+  margin-left: 15px;
+  text-align: justify;
+  list-style: disc;
+}
+
+.service-block__item {
+  font-size: 2rem;
+  font-weight: initial;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.service-block__item:last-child {
+  padding-bottom: 0;
 }
 
 .service-block__price-content {
@@ -1082,6 +1131,7 @@ a:hover::after {
 }
 
 .service-block__price-block {
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -1349,6 +1399,9 @@ a:hover::after {
 
 .contacts-card__about-contacts {
   margin: 30px 0 64px;
+}
+.contacts-card__about-contacts:last-child {
+  margin: 64px 0 30px;
 }
 
 .contacts-list {

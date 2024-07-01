@@ -48,6 +48,11 @@
 
 .contacts-card__about-contacts {
   margin: 30px 0 64px;
+
+  &:last-child {
+    margin: 64px 0 30px;
+
+  }
 }
 
 .contacts-list {

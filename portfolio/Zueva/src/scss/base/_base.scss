@@ -57,7 +57,7 @@ h2 {
 h3 {
   padding: 30px 0 21px;
   position: relative;
-  @include font-source(4.5rem);
+  @include font-source(2.8rem);
   text-transform: uppercase;
 
   border-bottom: 1px solid $color-text-main;
@@ -78,6 +78,12 @@ h3 {
     @include font-source(6vw);
 
   }
+}
+
+h4 {
+  padding: 35px 0;
+  @include font-source(3.5rem);
+  text-transform: uppercase;
 }
 
 p {

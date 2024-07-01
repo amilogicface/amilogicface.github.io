@@ -5,7 +5,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 30px;
-    margin: -30px 0;
+    margin-top: -30px;
 
     @media (width < $media-tablet) {
       padding: 0 15px;
@@ -17,6 +17,7 @@
 .service-block {
   flex: 1 0 50%;
   padding: 30px;
+  min-width: 525px;
 
   @media (width < $media-tablet) {
     padding: 15px;
@@ -42,10 +43,35 @@
   border-right: 1px solid $color-text-main;
 }
 
+.service-block__title {
+  display: block;
+  padding-top: 30px;
+  @extend %second-font;
+  @include font-source(1.5rem);
+}
+
 .service-block__about {
   margin: 0;
   padding: 30px 0;
   @include font-source(2rem);
+}
+
+.service-block__list {
+  padding-top: 15px;
+  margin-left: 15px;
+
+  text-align: justify;
+  list-style: disc;
+}
+
+.service-block__item {
+  @include font-source(2rem);
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .service-block__price-content {
@@ -65,6 +91,7 @@
 }
 
 .service-block__price-block {
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
 }
